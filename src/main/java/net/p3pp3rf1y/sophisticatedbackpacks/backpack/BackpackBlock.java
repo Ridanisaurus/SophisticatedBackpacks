@@ -50,10 +50,6 @@ import static net.minecraft.state.properties.BlockStateProperties.WATERLOGGED;
 
 public class BackpackBlock extends Block implements IWaterLoggable {
 	public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
-	private static final VoxelShape NORTH_SHAPE = makeCuboidShape(2, 0, 5, 14, 14, 10);
-	private static final VoxelShape SOUTH_SHAPE = makeCuboidShape(2, 0, 6, 14, 14, 11);
-	private static final VoxelShape WEST_SHAPE = makeCuboidShape(5, 0, 2, 10, 14, 14);
-	private static final VoxelShape EAST_SHAPE = makeCuboidShape(6, 0, 2, 11, 14, 14);
 	private static final int BEDROCK_RESISTANCE = 3600000;
 
 	public BackpackBlock() {
@@ -98,14 +94,14 @@ public class BackpackBlock extends Block implements IWaterLoggable {
 
 		switch (facing) {
 			case NORTH:
-				return NORTH_SHAPE;
+				return BackpackShapes.NORTH_SHAPE;
 			case SOUTH:
-				return SOUTH_SHAPE;
+				return BackpackShapes.SOUTH_SHAPE;
 			case WEST:
-				return WEST_SHAPE;
+				return BackpackShapes.WEST_SHAPE;
 			case EAST:
 			default:
-				return EAST_SHAPE;
+				return BackpackShapes.EAST_SHAPE;
 		}
 	}
 
